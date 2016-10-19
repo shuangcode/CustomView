@@ -1,4 +1,4 @@
-package com.daniel.custom.design;
+package com.daniel.custom.design.fourprinciple;
 
 import android.graphics.Bitmap;
 
@@ -8,6 +8,6 @@ import android.graphics.Bitmap;
  */
 public interface ImageCache {
 
-    Bitmap get(String url);
+    Bitmap get(String url); 
     void put(String url, Bitmap bitmap);
 }

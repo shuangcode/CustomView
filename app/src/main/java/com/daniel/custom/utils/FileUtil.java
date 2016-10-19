@@ -17,7 +17,7 @@ public class FileUtil {
 
     public static final String TAG ="FileUtil";
     private static String pathDiv = "/";
-    private static File cacheDir = !isExternalStorageWritable() ? UIUtils.getContext().getFilesDir() : UIUtils.getContext().getExternalCacheDir();
+    public static File cacheDir = !isExternalStorageWritable() ? UIUtils.getContext().getFilesDir() : UIUtils.getContext().getExternalCacheDir();
 
     /**
      * 判断缓存文件是否存在

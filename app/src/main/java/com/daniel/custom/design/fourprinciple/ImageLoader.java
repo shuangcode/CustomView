@@ -1,4 +1,4 @@
-package com.daniel.custom.design;
+package com.daniel.custom.design.fourprinciple;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -30,13 +30,14 @@ public class ImageLoader {
     }
 
     public void displayImage(String url, ImageView imageView){
-        // 从缓存中拿图片
+        // 1.从缓存中拿图片
         Bitmap bitmap =  mImageCache.get(url);
-        // 说明缓存中有图片
+        // 2.缓存中有图片就直接显示
         if(null != bitmap){
             imageView.setImageBitmap(bitmap);
             return;
         }
+        // 3.从网络中加载
         submitLoadRequest(url, imageView);
     }
 

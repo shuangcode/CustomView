@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.daniel.custom.bean.Person;
-import com.daniel.custom.design.ImageLoader;
+import com.daniel.custom.design.fourprinciple.ImageLoader;
 import com.daniel.custom.utils.CLog;
 import com.daniel.custom.utils.FileUtil;
 

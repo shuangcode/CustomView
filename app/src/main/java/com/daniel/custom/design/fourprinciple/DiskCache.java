@@ -1,7 +1,9 @@
-package com.daniel.custom.design;
+package com.daniel.custom.design.fourprinciple;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+
+import com.daniel.custom.utils.FileUtil;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -13,7 +15,8 @@ import java.io.IOException;
  */
 public class DiskCache implements ImageCache{
 
-    static String cacheDir = "sdcard/cache";
+//    static String cacheDir = "sdcard/cache";
+     static String cacheDir = FileUtil.cacheDir.getAbsolutePath();
 
     @Override
     public Bitmap get(String url) {

@@ -1,4 +1,4 @@
-package com.daniel.custom.design;
+package com.daniel.custom.design.fourprinciple;
 
 import android.graphics.Bitmap;
 import android.util.LruCache;
