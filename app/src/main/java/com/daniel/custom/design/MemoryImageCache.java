@@ -12,13 +12,14 @@ public class MemoryImageCache implements ImageCache{
     LruCache<String ,Bitmap> mMemoryCache;
 
     public MemoryImageCache(){
-        // 计算可以使用的最大内存
+        // 计算可以使用的最大内存 单位M
         final int maxMemory = (int) (Runtime.getRuntime().maxMemory()/1024);
         int cacheSize = maxMemory/4;
         mMemoryCache = new LruCache<String ,Bitmap>(cacheSize){
 
             @Override
             protected int sizeOf(String key, Bitmap bitmap) {
+                // 单位M
                 return bitmap.getRowBytes() * bitmap.getHeight() / 1024; // 这句话什么意思
             }
         };

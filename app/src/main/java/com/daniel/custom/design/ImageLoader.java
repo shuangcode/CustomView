@@ -46,7 +46,7 @@ public class ImageLoader {
         mExecutorService.submit(new Runnable() {
             @Override
             public void run() {
-                // 这个是在子线程吗？
+                // 这个是在子线程
                 CLog.d(LOG_TAG, "run 方法中 currentThreadId = "+ Thread.currentThread().getId());
                 Bitmap bitmap = downloadImage(url);
                 if(null == bitmap){

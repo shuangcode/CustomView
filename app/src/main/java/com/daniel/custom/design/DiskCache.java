@@ -15,9 +15,6 @@ public class DiskCache implements ImageCache{
 
     static String cacheDir = "sdcard/cache";
 
-
-
-
     @Override
     public Bitmap get(String url) {
         return BitmapFactory.decodeFile(cacheDir+url);

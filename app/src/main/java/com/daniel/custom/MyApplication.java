@@ -5,9 +5,9 @@ import android.content.Context;
 import android.os.Handler;
 
 /**
- * Created by Administrator on 2016/6/18.
+ * Created by DanielXiao on 2016/6/18.
  */
-public class MyApplicaiton extends Application{
+public class MyApplication extends Application{
 
     public static Context context = null;
 
@@ -24,5 +24,7 @@ public class MyApplicaiton extends Application{
         handler = new Handler();
         mainThread = Thread.currentThread();
         mainThreadId = android.os.Process.myTid();
+
+
     }
 }

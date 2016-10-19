@@ -7,7 +7,7 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Toast;
 
-import com.daniel.custom.MyApplicaiton;
+import com.daniel.custom.MyApplication;
 import com.daniel.custom.common.AppManager;
 
 
@@ -17,16 +17,16 @@ import com.daniel.custom.common.AppManager;
 public class UIUtils {
 
     public static Context getContext() {
-        return MyApplicaiton.context;
+        return MyApplication.context;
     }
 
     public static Handler getHandler() {
-        return MyApplicaiton.handler;
+        return MyApplication.handler;
     }
 
     public static boolean isInMainThread() {
         int tid = android.os.Process.myTid();
-        if (tid == MyApplicaiton.mainThreadId) {
+        if (tid == MyApplication.mainThreadId) {
             return true;
         }
         return false;
