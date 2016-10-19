@@ -9,6 +9,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.daniel.custom.R;
+import com.daniel.custom.utils.Utils;
 
 /**
  * 谷歌彩虹进度条

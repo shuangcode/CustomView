@@ -1,4 +1,4 @@
-package com.daniel.custom.view;
+package com.daniel.custom.utils;
 
 import android.content.Context;
 
