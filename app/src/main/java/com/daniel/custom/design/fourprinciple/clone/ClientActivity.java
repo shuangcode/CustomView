@@ -1,18 +1,24 @@
 package com.daniel.custom.design.fourprinciple.clone;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.Toast;
+import com.daniel.custom.R;
+import com.daniel.custom.example.SuperActivity;
 
 /**
  * Created by daniel.xiao on 2016/10/25.
  */
-public class ClientActivity extends Activity{
+public class ClientActivity extends SuperActivity {
 
-
+    private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.activity_anim);
+        button = (Button) findViewById(R.id.button2);
 
         // 1.构建文档对象
         WordDocument originDoc = new WordDocument();
@@ -29,5 +35,31 @@ public class ClientActivity extends Activity{
         doc2.showDocument();
 
         originDoc.showDocument();
+
+
+        new Thread(new Runnable() {
+            @Override public void run() {
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                ClientActivity.this.runOnUiThread(new Runnable() {
+                    @Override public void run() {
+                        function2();
+                    }
+                });
+            }
+        }).start();
+    }
+
+    @Override protected void onDestroy() {
+        Toast.makeText(ClientActivity.this, "onDestroy", Toast.LENGTH_LONG).show();
+        super.onDestroy();
+        System.gc();
+    }
+
+    public void function(){
+
     }
 }

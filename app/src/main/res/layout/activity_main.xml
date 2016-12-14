@@ -25,6 +25,24 @@
     <com.daniel.custom.view.DotView
         android:layout_width="match_parent"
         android:layout_height="10dp" />
-    
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="hintVoice"
+        android:text="录音提示音"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="popupWindow"
+        android:text="弹出自定义对话框"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="createFile"
+        android:text="createFile"/>
     
 </LinearLayout>

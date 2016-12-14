@@ -1,5 +1,8 @@
 package com.daniel.custom;
 
+import android.content.Context;
+import android.media.MediaPlayer;
+import android.media.RingtoneManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -11,6 +14,10 @@ import com.daniel.custom.design.fourprinciple.ImageLoader;
 import com.daniel.custom.utils.CLog;
 import com.daniel.custom.utils.FileUtil;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +34,25 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         test2();
+    }
+
+    public void hintVoice(View view){
+        try {
+            soundRing(this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void soundRing(Context context) throws IllegalArgumentException, SecurityException, IllegalStateException, IOException {
+
+        MediaPlayer mp = new MediaPlayer();
+        mp.reset();
+        mp.setDataSource(context,
+                RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM));
+        mp.prepare();
+        mp.start();
+
     }
 
     /**
@@ -89,6 +115,21 @@ public class MainActivity extends AppCompatActivity {
             CLog.d(TAG, per.toString());
         }
 
+    }
 
+    public void createFile(View view){
+        String path = null;
+        File file2 = new File(path,path);
+        FileOutputStream out;
+        try {
+            out = new FileOutputStream(file2, false); // 直接覆写
+            ObjectOutputStream objOut = new ObjectOutputStream(out);
+            objOut.writeObject(new String("abcedf"));
+            objOut.flush();
+            objOut.close();
+            Toast.makeText(this, "success", Toast.LENGTH_LONG).show();
+        } catch (IOException e) {
+            Toast.makeText(this, "exception", Toast.LENGTH_SHORT).show();
+        }
     }
 }
